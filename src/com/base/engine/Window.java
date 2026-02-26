@@ -1,3 +1,6 @@
+package com.base.engine;
+
+//Imports
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
@@ -11,9 +14,11 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
-public class HelloWorld {
+import static org.lwjgl.glfw.GLFW.glfwCreateWindow;
+import static org.lwjgl.system.MemoryUtil.NULL;
 
-    // The window handle
+public class Window {
+
     private long window;
 
     public void run() {
@@ -32,7 +37,7 @@ public class HelloWorld {
     }
 
     private void init() {
-        // Setup an error callback. The default implementation
+        // Set up an error callback. The default implementation
         // will print the error message in System.err.
         GLFWErrorCallback.createPrint(System.err).set();
 
@@ -109,7 +114,7 @@ public class HelloWorld {
     }
 
     public static void main(String[] args) {
-        new HelloWorld().run();
+        new Window().run();
     }
 
 }
